@@ -63,9 +63,9 @@ namespace Client.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap circle_cropped {
+        internal static System.Drawing.Bitmap Open_Web_Away_ {
             get {
-                object obj = ResourceManager.GetObject("circle-cropped", resourceCulture);
+                object obj = ResourceManager.GetObject("Open Web Away ", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,89 +73,9 @@ namespace Client.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap circle_cropped__1_ {
+        internal static System.Drawing.Bitmap search32x32 {
             get {
-                object obj = ResourceManager.GetObject("circle-cropped (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap circle_cropped__2_ {
-            get {
-                object obj = ResourceManager.GetObject("circle-cropped (2)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pic_2 {
-            get {
-                object obj = ResourceManager.GetObject("pic_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pic_3 {
-            get {
-                object obj = ResourceManager.GetObject("pic_3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rsz_pic_4 {
-            get {
-                object obj = ResourceManager.GetObject("rsz_pic_4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rsz_pic_5 {
-            get {
-                object obj = ResourceManager.GetObject("rsz_pic_5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rsz_pic_6 {
-            get {
-                object obj = ResourceManager.GetObject("rsz_pic_6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rsz_pic_7 {
-            get {
-                object obj = ResourceManager.GetObject("rsz_pic_7", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rsz_pic_8 {
-            get {
-                object obj = ResourceManager.GetObject("rsz_pic_8", resourceCulture);
+                object obj = ResourceManager.GetObject("search32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
