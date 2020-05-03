@@ -52,7 +52,7 @@
             // 
             this.connect_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.connect_bt.ForeColor = System.Drawing.Color.Black;
-            this.connect_bt.Location = new System.Drawing.Point(674, 274);
+            this.connect_bt.Location = new System.Drawing.Point(674, 273);
             this.connect_bt.Margin = new System.Windows.Forms.Padding(4);
             this.connect_bt.Name = "connect_bt";
             this.connect_bt.Size = new System.Drawing.Size(111, 47);
@@ -84,7 +84,7 @@
             // search_bt
             // 
             this.search_bt.Image = global::Client.Properties.Resources.search32x32;
-            this.search_bt.Location = new System.Drawing.Point(549, 274);
+            this.search_bt.Location = new System.Drawing.Point(549, 273);
             this.search_bt.Margin = new System.Windows.Forms.Padding(4);
             this.search_bt.Name = "search_bt";
             this.search_bt.Size = new System.Drawing.Size(90, 47);
