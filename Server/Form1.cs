@@ -23,25 +23,46 @@ namespace Server
         public Form1()
         {
             InitializeComponent();
-        
-        //Process everything of server (use for button click)
-        private void Process() { }
-        //Setup port, ip,.... and start server
-        private void Setup() { }
-        //listen to client for sending and receiving
-        private void Listen(object clientObj) { }
-        //waiting for client and accept connection
-        private void Connect() { }
-        //send a message
-        private void SendData(string message) { }
-        //get message from client
-        private string ReceiveData() { }
-        //website is working correctly.
-        private bool IsValid(string url) { }
-        //Transfer input of user to a valid url(add "http, https")
 
-        private string ValidateUrl(string url) { }
-        //Open default Browser
-        private void OpenBrowser(string url) { }
+            //Process everything of server (use for button click)
+            //private void Process() { }
+            //Setup port, ip,.... and start server
+            //private void Setup() { }
+            //listen to client for sending and receiving
+            //private void Listen(object clientObj) { }
+            //waiting for client and accept connection
+            //private void Connect() { }
+            //send a message
+            //private void SendData(string message) { }
+            //get message from client
+            //private string ReceiveData() { }
+            //website is working correctly.
+            //private bool IsValid(string url) { }
+            //Transfer input of user to a valid url(add "http, https")
+
+            //private string ValidateUrl(string url) { }
+            //Open default Browser
+            //private void OpenBrowser(string url) { }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
