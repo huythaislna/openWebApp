@@ -175,7 +175,7 @@ namespace Server
         {
             start_bt.Enabled = false;
             Setup();
-            label2.Text = "ON";
+            power_lb.Text = "ON";
             
         }
         

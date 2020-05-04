@@ -58,5 +58,13 @@ namespace Server
             }
             log_tb.Text = strLog;
         }
+
+        private void start_bt_Click(object sender, EventArgs e)
+        {
+            Log("Waiting for a connection ...");
+            Log("Connected to 127.0.0.1:45678");
+            Log("Received from 127.0.0.1:45678 - facebook.com");
+            Log("Send to 127.0.0.1:45678 - Successfully!");
+        }
     }
 }
