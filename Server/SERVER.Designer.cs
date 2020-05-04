@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.start_bt = new System.Windows.Forms.Button();
-            this.stop_bt = new System.Windows.Forms.Button();
             this.port_tb = new System.Windows.Forms.TextBox();
             this.port_lb = new System.Windows.Forms.Label();
             this.log_tb = new System.Windows.Forms.ListView();
@@ -47,24 +46,13 @@
             // start_bt
             // 
             this.start_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.start_bt.Location = new System.Drawing.Point(750, 312);
+            this.start_bt.Location = new System.Drawing.Point(743, 340);
             this.start_bt.Name = "start_bt";
             this.start_bt.Size = new System.Drawing.Size(141, 58);
             this.start_bt.TabIndex = 9;
             this.start_bt.Text = "Start";
             this.start_bt.UseVisualStyleBackColor = true;
             this.start_bt.Click += new System.EventHandler(this.start_bt_Click);
-            // 
-            // stop_bt
-            // 
-            this.stop_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stop_bt.Location = new System.Drawing.Point(750, 411);
-            this.stop_bt.Name = "stop_bt";
-            this.stop_bt.Size = new System.Drawing.Size(141, 58);
-            this.stop_bt.TabIndex = 10;
-            this.stop_bt.Text = "Stop";
-            this.stop_bt.UseVisualStyleBackColor = true;
-            this.stop_bt.Click += new System.EventHandler(this.stop_bt_Click);
             // 
             // port_tb
             // 
@@ -94,10 +82,11 @@
             this.columnHeader4});
             this.log_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.log_tb.FullRowSelect = true;
+            this.log_tb.GridLines = true;
+            this.log_tb.HideSelection = false;
             this.log_tb.Location = new System.Drawing.Point(35, 312);
             this.log_tb.Name = "log_tb";
-            this.log_tb.Scrollable = false;
-            this.log_tb.Size = new System.Drawing.Size(680, 157);
+            this.log_tb.Size = new System.Drawing.Size(686, 157);
             this.log_tb.TabIndex = 23;
             this.log_tb.UseCompatibleStateImageBehavior = false;
             this.log_tb.View = System.Windows.Forms.View.Details;
@@ -147,7 +136,7 @@
             this.power_lb.AutoSize = true;
             this.power_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.power_lb.ForeColor = System.Drawing.Color.Red;
-            this.power_lb.Location = new System.Drawing.Point(789, 275);
+            this.power_lb.Location = new System.Drawing.Point(787, 420);
             this.power_lb.Name = "power_lb";
             this.power_lb.Size = new System.Drawing.Size(55, 25);
             this.power_lb.TabIndex = 26;
@@ -173,13 +162,12 @@
             this.Controls.Add(this.log_tb);
             this.Controls.Add(this.port_tb);
             this.Controls.Add(this.port_lb);
-            this.Controls.Add(this.stop_bt);
             this.Controls.Add(this.start_bt);
             this.Controls.Add(this.banner_pic);
-            this.HelpButton = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Server";
             this.Text = "Server";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Server_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.banner_pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,7 +177,6 @@
         #endregion
         private System.Windows.Forms.PictureBox banner_pic;
         private System.Windows.Forms.Button start_bt;
-        private System.Windows.Forms.Button stop_bt;
         private System.Windows.Forms.TextBox port_tb;
         private System.Windows.Forms.Label port_lb;
         private System.Windows.Forms.ListView log_tb;
