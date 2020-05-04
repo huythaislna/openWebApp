@@ -128,6 +128,7 @@
             // 
             // search_bt
             // 
+            this.search_bt.Enabled = false;
             this.search_bt.Image = global::Client.Properties.Resources.search15x15;
             this.search_bt.Location = new System.Drawing.Point(632, 348);
             this.search_bt.Margin = new System.Windows.Forms.Padding(4);
@@ -135,7 +136,7 @@
             this.search_bt.Size = new System.Drawing.Size(79, 31);
             this.search_bt.TabIndex = 16;
             this.search_bt.UseVisualStyleBackColor = true;
-            this.search_bt.Click += new System.EventHandler(this.button1_Click);
+            this.search_bt.Click += new System.EventHandler(this.search_button_Click);
             // 
             // banner_pic
             // 
