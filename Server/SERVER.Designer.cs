@@ -175,6 +175,7 @@
             this.Controls.Add(this.stop_button);
             this.Controls.Add(this.start_bt);
             this.Controls.Add(this.banner_pic);
+            this.HelpButton = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Server";
             this.Text = "Server";
