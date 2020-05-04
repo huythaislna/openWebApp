@@ -178,6 +178,11 @@ namespace Server
             power_lb.Text = "ON";
             
         }
-        
+
+        private void stop_bt_Click(object sender, EventArgs e)
+        {
+            clientStream.Close();
+            Client.Close();
+        }
     }
 }

@@ -64,6 +64,7 @@
             this.stop_bt.TabIndex = 10;
             this.stop_bt.Text = "Stop";
             this.stop_bt.UseVisualStyleBackColor = true;
+            this.stop_bt.Click += new System.EventHandler(this.stop_bt_Click);
             // 
             // port_tb
             // 
@@ -92,11 +93,7 @@
             this.columnHeader3,
             this.columnHeader4});
             this.log_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.log_tb.FullRowSelect = true;
-=======
-            this.log_tb.HideSelection = false;
->>>>>>> 25969decd9ce496385f50dffc62667d09f272c41
             this.log_tb.Location = new System.Drawing.Point(35, 312);
             this.log_tb.Name = "log_tb";
             this.log_tb.Scrollable = false;

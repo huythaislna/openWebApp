@@ -82,12 +82,22 @@ namespace Client
         private void button1_Click(object sender, EventArgs e)
         {
             SendData(url_tb.Text.Trim());
+            try
+            {
+                TcpClient.Connect(ip_tb.Text, Int32.Parse(port_tb.Text));
+                ReceiveMessage()
+            }
+            catch
+            {
+                status_lb.Text = "Server is off";
+            }
         }
 
         private void connect_bt_Click(object sender, EventArgs e)
         {
             Setup();
             url_tb.Enabled = true;
+
         }
     }
 }
