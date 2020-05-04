@@ -20,6 +20,9 @@ namespace Server
         TcpListener TcpServer;
         Socket Client;
         NetworkStream clientStream;
+        private string strLog = string.Empty;
+        const int maxStrLogLine = 10;
+        int strLogLine = 0;
         public Server()
         {
             InitializeComponent();
@@ -44,6 +47,24 @@ namespace Server
         //Open default Browser
         private void OpenBrowser(string url) { }
         //write to log textbox
-        private void Log(string message) { }
+        private void Log(string message) {
+            int temporatureLength = strLog.Length;
+            DateTime now = DateTime.Now;
+            strLog = now.ToString() + ": " + message + "\r\n" + strLog;
+            strLogLine += 1;
+            if (strLogLine > maxStrLogLine)
+            {
+                strLog = strLog.Remove(temporatureLength, strLog.Length - temporatureLength);
+            }
+            log_tb.Text = strLog;
+        }
+
+        private void start_bt_Click(object sender, EventArgs e)
+        {
+            Log("Waiting for a connection ...");
+            Log("Connected to 127.0.0.1:45678");
+            Log("Received from 127.0.0.1:45678 - facebook.com");
+            Log("Send to 127.0.0.1:45678 - Successfully!");
+        }
     }
 }

@@ -83,7 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Open Web Away .png" />
-    <None Include="Resources\search32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search15x15.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

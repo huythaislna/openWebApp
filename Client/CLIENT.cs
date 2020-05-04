@@ -28,14 +28,14 @@ namespace Client
             byte[] outstream = Encoding.UTF8.GetBytes(message);
             serverStream.Write(outstream, 0, outstream.Length);
             serverStream.Flush();
-            url.Text= "";
+            url_tb.Text= "";
         }
         //Setup port, ip,.... and start client
         private void Setup()
         {
             try
             {
-                TcpClient.Connect(textBox2.Text, Int32.Parse(textBox3.Text));
+                TcpClient.Connect(ip_tb.Text, Int32.Parse(port_tb.Text));
             }
             catch
             {
@@ -76,18 +76,18 @@ namespace Client
         private void textBox4_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                SendData(url.Text.Trim());
+                SendData(url_tb.Text.Trim());
         }
         //click to send
         private void button1_Click(object sender, EventArgs e)
         {
-            SendData(url.Text.Trim());
+            SendData(url_tb.Text.Trim());
         }
 
         private void connect_bt_Click(object sender, EventArgs e)
         {
             Setup();
-            url.Enabled = true;
+            url_tb.Enabled = true;
         }
     }
 }

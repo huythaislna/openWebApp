@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client));
             this.connect_bt = new System.Windows.Forms.Button();
             this.status_lb = new System.Windows.Forms.Label();
+            this.url_tb = new System.Windows.Forms.TextBox();
+            this.ip_lb = new System.Windows.Forms.Label();
+            this.ip_tb = new System.Windows.Forms.TextBox();
+            this.port_tb = new System.Windows.Forms.TextBox();
+            this.port_lb = new System.Windows.Forms.Label();
+            this.url_lb = new System.Windows.Forms.Label();
+            this.search_bt = new System.Windows.Forms.Button();
             this.banner_pic = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.url = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.banner_pic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,10 +46,10 @@
             // 
             this.connect_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.connect_bt.ForeColor = System.Drawing.Color.Black;
-            this.connect_bt.Location = new System.Drawing.Point(667, 236);
+            this.connect_bt.Location = new System.Drawing.Point(583, 257);
             this.connect_bt.Margin = new System.Windows.Forms.Padding(4);
             this.connect_bt.Name = "connect_bt";
-            this.connect_bt.Size = new System.Drawing.Size(111, 47);
+            this.connect_bt.Size = new System.Drawing.Size(128, 47);
             this.connect_bt.TabIndex = 4;
             this.connect_bt.Text = "Connect";
             this.connect_bt.UseVisualStyleBackColor = true;
@@ -66,6 +66,77 @@
             this.status_lb.Size = new System.Drawing.Size(0, 25);
             this.status_lb.TabIndex = 12;
             // 
+            // url_tb
+            // 
+            this.url_tb.Enabled = false;
+            this.url_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.url_tb.HideSelection = false;
+            this.url_tb.Location = new System.Drawing.Point(238, 350);
+            this.url_tb.Margin = new System.Windows.Forms.Padding(4);
+            this.url_tb.Name = "url_tb";
+            this.url_tb.Size = new System.Drawing.Size(356, 27);
+            this.url_tb.TabIndex = 14;
+            this.url_tb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyDown);
+            // 
+            // ip_lb
+            // 
+            this.ip_lb.AutoSize = true;
+            this.ip_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ip_lb.Location = new System.Drawing.Point(124, 239);
+            this.ip_lb.Name = "ip_lb";
+            this.ip_lb.Size = new System.Drawing.Size(91, 20);
+            this.ip_lb.TabIndex = 17;
+            this.ip_lb.Text = "IP Address";
+            // 
+            // ip_tb
+            // 
+            this.ip_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ip_tb.Location = new System.Drawing.Point(238, 236);
+            this.ip_tb.Name = "ip_tb";
+            this.ip_tb.Size = new System.Drawing.Size(235, 27);
+            this.ip_tb.TabIndex = 18;
+            this.ip_tb.Text = "127.0.0.1";
+            // 
+            // port_tb
+            // 
+            this.port_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.port_tb.Location = new System.Drawing.Point(238, 293);
+            this.port_tb.Name = "port_tb";
+            this.port_tb.Size = new System.Drawing.Size(103, 27);
+            this.port_tb.TabIndex = 20;
+            this.port_tb.Text = "8080";
+            // 
+            // port_lb
+            // 
+            this.port_lb.AutoSize = true;
+            this.port_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.port_lb.Location = new System.Drawing.Point(124, 296);
+            this.port_lb.Name = "port_lb";
+            this.port_lb.Size = new System.Drawing.Size(40, 20);
+            this.port_lb.TabIndex = 19;
+            this.port_lb.Text = "Port";
+            // 
+            // url_lb
+            // 
+            this.url_lb.AutoSize = true;
+            this.url_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.url_lb.Location = new System.Drawing.Point(124, 350);
+            this.url_lb.Name = "url_lb";
+            this.url_lb.Size = new System.Drawing.Size(43, 20);
+            this.url_lb.TabIndex = 21;
+            this.url_lb.Text = "URL";
+            // 
+            // search_bt
+            // 
+            this.search_bt.Image = global::Client.Properties.Resources.search15x15;
+            this.search_bt.Location = new System.Drawing.Point(632, 348);
+            this.search_bt.Margin = new System.Windows.Forms.Padding(4);
+            this.search_bt.Name = "search_bt";
+            this.search_bt.Size = new System.Drawing.Size(79, 31);
+            this.search_bt.TabIndex = 16;
+            this.search_bt.UseVisualStyleBackColor = true;
+            this.search_bt.Click += new System.EventHandler(this.button1_Click);
+            // 
             // banner_pic
             // 
             this.banner_pic.Image = ((System.Drawing.Image)(resources.GetObject("banner_pic.Image")));
@@ -75,90 +146,19 @@
             this.banner_pic.TabIndex = 13;
             this.banner_pic.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Image = global::Client.Properties.Resources.search32x32;
-            this.button1.Location = new System.Drawing.Point(667, 350);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 41);
-            this.button1.TabIndex = 16;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // url
-            // 
-            this.url.Enabled = false;
-            this.url.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.url.HideSelection = false;
-            this.url.Location = new System.Drawing.Point(238, 350);
-            this.url.Margin = new System.Windows.Forms.Padding(4);
-            this.url.Name = "url";
-            this.url.Size = new System.Drawing.Size(356, 27);
-            this.url.TabIndex = 14;
-            this.url.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(124, 239);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 20);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "IP Address";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(238, 236);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(235, 27);
-            this.textBox2.TabIndex = 18;
-            this.textBox2.Text = "127.0.0.1";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(238, 293);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(103, 27);
-            this.textBox3.TabIndex = 20;
-            this.textBox3.Text = "8080";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(124, 296);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 20);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Port";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(124, 350);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 20);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "URL";
-            // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 492);
             this.Controls.Add(this.status_lb);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.url);
+            this.Controls.Add(this.url_lb);
+            this.Controls.Add(this.port_tb);
+            this.Controls.Add(this.port_lb);
+            this.Controls.Add(this.ip_tb);
+            this.Controls.Add(this.ip_lb);
+            this.Controls.Add(this.search_bt);
+            this.Controls.Add(this.url_tb);
             this.Controls.Add(this.banner_pic);
             this.Controls.Add(this.connect_bt);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -175,13 +175,13 @@
         private System.Windows.Forms.Button connect_bt;
         private System.Windows.Forms.Label status_lb;
         private System.Windows.Forms.PictureBox banner_pic;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox url;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button search_bt;
+        private System.Windows.Forms.TextBox url_tb;
+        private System.Windows.Forms.Label ip_lb;
+        private System.Windows.Forms.TextBox ip_tb;
+        private System.Windows.Forms.TextBox port_tb;
+        private System.Windows.Forms.Label port_lb;
+        private System.Windows.Forms.Label url_lb;
     }
 }
 
