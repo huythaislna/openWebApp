@@ -102,6 +102,7 @@
             this.columnHeader3,
             this.columnHeader4});
             this.log_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.log_tb.FullRowSelect = true;
             this.log_tb.Location = new System.Drawing.Point(35, 312);
             this.log_tb.Name = "log_tb";
             this.log_tb.Size = new System.Drawing.Size(696, 157);
