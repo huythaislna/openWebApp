@@ -160,7 +160,7 @@ namespace Server
             x.SubItems.Add(y);
             x.SubItems.Add(z);
             x.SubItems.Add(t);
-            log_tb.Items.Add(x);
+            log_tb.Items.Insert(0, x);
         }
 
         private void start_bt_Click(object sender, EventArgs e)
