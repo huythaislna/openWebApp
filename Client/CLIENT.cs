@@ -89,5 +89,16 @@ namespace Client
             Setup();
             url_tb.Enabled = true;
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            introduce intro = new introduce();
+            intro.Show();
+        }
+
+        private void Client_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
