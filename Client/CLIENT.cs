@@ -107,12 +107,8 @@ namespace Client
         private void button1_Click_1(object sender, EventArgs e)
         {
             introduce intro = new introduce();
-            intro.Show();
+            intro.ShowDialog();
         }
-
-        private void Client_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

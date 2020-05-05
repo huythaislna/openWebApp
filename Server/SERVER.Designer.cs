@@ -28,23 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Server));
             this.start_bt = new System.Windows.Forms.Button();
             this.port_tb = new System.Windows.Forms.TextBox();
             this.port_lb = new System.Windows.Forms.Label();
+            this.urlprocess = new System.Windows.Forms.Label();
+            this.url_lb = new System.Windows.Forms.Label();
+            this.power_lb = new System.Windows.Forms.Label();
             this.log_tb = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.urlprocess = new System.Windows.Forms.Label();
-            this.url_lb = new System.Windows.Forms.Label();
-            this.power_lb = new System.Windows.Forms.Label();
             this.banner_pic = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.banner_pic)).BeginInit();
             this.SuspendLayout();
             // 
             // start_bt
             // 
+            this.start_bt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.start_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.start_bt.Location = new System.Drawing.Point(743, 340);
             this.start_bt.Name = "start_bt";
@@ -72,44 +75,6 @@
             this.port_lb.Size = new System.Drawing.Size(40, 20);
             this.port_lb.TabIndex = 21;
             this.port_lb.Text = "Port";
-            // 
-            // log_tb
-            // 
-            this.log_tb.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.log_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.log_tb.FullRowSelect = true;
-            this.log_tb.GridLines = true;
-            this.log_tb.HideSelection = false;
-            this.log_tb.Location = new System.Drawing.Point(35, 312);
-            this.log_tb.Name = "log_tb";
-            this.log_tb.Size = new System.Drawing.Size(686, 157);
-            this.log_tb.TabIndex = 23;
-            this.log_tb.UseCompatibleStateImageBehavior = false;
-            this.log_tb.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "DATA";
-            this.columnHeader1.Width = 120;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "STATUS";
-            this.columnHeader2.Width = 120;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "ADDRESS";
-            this.columnHeader3.Width = 120;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "TIME";
-            this.columnHeader4.Width = 150;
             // 
             // urlprocess
             // 
@@ -142,6 +107,46 @@
             this.power_lb.TabIndex = 26;
             this.power_lb.Text = "OFF";
             // 
+            // log_tb
+            // 
+            this.log_tb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("log_tb.BackgroundImage")));
+            this.log_tb.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.log_tb.Cursor = System.Windows.Forms.Cursors.Default;
+            this.log_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.log_tb.FullRowSelect = true;
+            this.log_tb.GridLines = true;
+            this.log_tb.HideSelection = false;
+            this.log_tb.Location = new System.Drawing.Point(35, 312);
+            this.log_tb.Name = "log_tb";
+            this.log_tb.Size = new System.Drawing.Size(686, 157);
+            this.log_tb.TabIndex = 23;
+            this.log_tb.UseCompatibleStateImageBehavior = false;
+            this.log_tb.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "DATA";
+            this.columnHeader1.Width = 120;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "STATUS";
+            this.columnHeader2.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "ADDRESS";
+            this.columnHeader3.Width = 120;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "TIME";
+            this.columnHeader4.Width = 150;
+            // 
             // banner_pic
             // 
             this.banner_pic.Image = global::Server.Properties.Resources.Open_Web_Away_;
@@ -151,11 +156,21 @@
             this.banner_pic.TabIndex = 8;
             this.banner_pic.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(743, 256);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Server
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 500);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.power_lb);
             this.Controls.Add(this.url_lb);
             this.Controls.Add(this.urlprocess);
@@ -164,6 +179,7 @@
             this.Controls.Add(this.port_lb);
             this.Controls.Add(this.start_bt);
             this.Controls.Add(this.banner_pic);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Server";
             this.Text = "Server";
@@ -187,6 +203,7 @@
         private System.Windows.Forms.Label urlprocess;
         private System.Windows.Forms.Label url_lb;
         private System.Windows.Forms.Label power_lb;
+        private System.Windows.Forms.Button button1;
     }
 }
 

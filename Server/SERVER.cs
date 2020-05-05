@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.IO;
 
 namespace Server
 {
@@ -79,7 +80,7 @@ namespace Server
                         stt = "Unsuccessful";
                     }
 
-                    Log(urlprocess.Text, stt, Client.RemoteEndPoint.ToString());
+                    Log(url, stt, Client.RemoteEndPoint.ToString());
                 }
                 catch
                 {
@@ -109,6 +110,16 @@ namespace Server
             return mess;
 
         }
+        //save log
+        private void exportLog(ListViewItem i)
+        {
+            StreamWriter writer = File.AppendText("log.txt");
+            writer.WriteLine(i.Text + " " + i.SubItems[1].Text + " " + i.SubItems[2].Text + " " + i.SubItems[3].Text);
+            writer.Flush();
+            writer.Close();
+            writer.Dispose();
+        }
+        
 
         //website is working correctly.
         private bool IsValid(string url)
@@ -161,6 +172,7 @@ namespace Server
             x.SubItems.Add(z);
             x.SubItems.Add(t);
             log_tb.Items.Insert(0, x);
+            exportLog(x);
         }
 
         private void start_bt_Click(object sender, EventArgs e)
@@ -180,5 +192,6 @@ namespace Server
                 Client.Close();
             }
         }
+        
     }
 }
