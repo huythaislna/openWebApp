@@ -80,7 +80,7 @@ namespace Server
                         stt = "Unsuccessful";
                     }
 
-                    Log(url, stt, Client.RemoteEndPoint.ToString());
+                    Log(urlprocess.Text, stt, Client.RemoteEndPoint.ToString());
                 }
                 catch
                 {
@@ -126,6 +126,7 @@ namespace Server
         {
             try
             {
+                ServicePointManager.ServerCertificateValidationCallback = (senderX, certificate, chain, sslPolicyErrors) => { return true; };
                 //Creating the HttpWebRequest 
                 HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
                 //Setting the Request method HEAD, you can also use GET too. 
