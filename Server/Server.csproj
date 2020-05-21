@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Microsoft\Office.cs" />
     <Compile Include="SERVER.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +84,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Open Web Away .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

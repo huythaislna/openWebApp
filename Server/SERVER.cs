@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.IO;
 
 namespace Server
 {
@@ -18,19 +19,14 @@ namespace Server
         IPAddress ipAddress;
         Int32 port = 8080;
         TcpListener TcpServer;
-        Socket Client;
+        Socket Client = null;
         NetworkStream clientStream;
-        
+
 
         public Server()
         {
             InitializeComponent();
         }
-        //Process everything of server (use for button click)
-        private void Process()
-        {
-        }
-
         //Setup port, ip,.... and start server
         private void Setup()
         {
@@ -41,6 +37,7 @@ namespace Server
             TcpServer.Start();
             //status.Text = "Waiting for a connection...";
             Thread serverThread = new Thread(Connect);
+            serverThread.IsBackground = true;
             serverThread.Start();
         }
 
@@ -51,6 +48,7 @@ namespace Server
             {
                 Client = TcpServer.AcceptSocket();
                 var t = new Thread(new ParameterizedThreadStart(Listen));
+                t.IsBackground = true;
                 t.Start(Client);
             }
         }
@@ -66,41 +64,33 @@ namespace Server
                 try
                 {
                     urlprocess.Text = ReceiveData();
-                    //MessageBox.Show(data);
-                    //clientStream.Flush();
-                    SendData("Server was received!", clientObj);
-                    Thread.Sleep(500);
                     SendData("Processing...", clientObj);
-                    Thread.Sleep(500);
 
-                   
                     string url = ValidateUrl(urlprocess.Text);
                     OpenBrowser(url);
 
                     if (IsValid(url))
                     {
-                        SendData("Successfull",clientObj);
-                        stt = "Successfull";
+                        SendData("Successful", clientObj);
+                        stt = "Successful";
                     }
                     else
                     {
-                        SendData("Unsuccessfull", clientObj);
-                        stt = "Unsuccessfull";
+                        SendData("Unsuccessful", clientObj);
+                        stt = "Unsuccessful";
                     }
 
-                    Log(url,stt, Client.RemoteEndPoint.ToString());
-                    
-
+                    Log(urlprocess.Text, stt, Client.RemoteEndPoint.ToString());
                 }
                 catch
                 {
-
+                    clientStream.Flush();
+                    clientStream.Close();
+                    return;
                 }
             }
-            clientStream.Close();
-            Client.Close();
         }
-        
+
         //send a message
         private void SendData(string message, object clientObj)
         {
@@ -118,13 +108,25 @@ namespace Server
 
             string mess = Encoding.UTF8.GetString(buffer);
             return mess;
-            
+
         }
+        //save log
+        private void exportLog(ListViewItem i)
+        {
+            StreamWriter writer = File.AppendText("log.txt");
+            writer.WriteLine(i.Text + " " + i.SubItems[1].Text + " " + i.SubItems[2].Text + " " + i.SubItems[3].Text);
+            writer.Flush();
+            writer.Close();
+            writer.Dispose();
+        }
+        
 
         //website is working correctly.
-        private bool IsValid(string url) {
+        private bool IsValid(string url)
+        {
             try
             {
+                ServicePointManager.ServerCertificateValidationCallback = (senderX, certificate, chain, sslPolicyErrors) => { return true; };
                 //Creating the HttpWebRequest 
                 HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
                 //Setting the Request method HEAD, you can also use GET too. 
@@ -141,9 +143,10 @@ namespace Server
                 return false;
             }
         }
-        
+
         //Transfer input of user to a valid url(add "http, https")
-        private string ValidateUrl(string url) {
+        private string ValidateUrl(string url)
+        {
             string head = "http://";
             string head1 = "https://";
             if (url.Contains(head) || url.Contains(head1))
@@ -153,7 +156,8 @@ namespace Server
         }
 
         //Open default Browser
-        private void OpenBrowser(string url) {
+        private void OpenBrowser(string url)
+        {
             System.Diagnostics.Process.Start(url);
         }
 
@@ -168,7 +172,8 @@ namespace Server
             x.SubItems.Add(y);
             x.SubItems.Add(z);
             x.SubItems.Add(t);
-            log_tb.Items.Add(x);
+            log_tb.Items.Insert(0, x);
+            exportLog(x);
         }
 
         private void start_bt_Click(object sender, EventArgs e)
@@ -176,7 +181,17 @@ namespace Server
             start_bt.Enabled = false;
             Setup();
             power_lb.Text = "ON";
-            
+            power_lb.ForeColor = System.Drawing.Color.Green;
+        }
+
+        private void Server_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Client != null)
+            {
+                clientStream.Flush();
+                clientStream.Close();
+                Client.Close();
+            }
         }
         
     }
