@@ -40,6 +40,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.history = new System.Windows.Forms.Button();
             this.banner_pic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.banner_pic)).BeginInit();
             this.SuspendLayout();
@@ -108,7 +109,6 @@
             // 
             // log_tb
             // 
-            this.log_tb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("log_tb.BackgroundImage")));
             this.log_tb.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -146,6 +146,17 @@
             this.columnHeader4.Text = "TIME";
             this.columnHeader4.Width = 150;
             // 
+            // history
+            // 
+            this.history.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.history.Location = new System.Drawing.Point(580, 248);
+            this.history.Name = "history";
+            this.history.Size = new System.Drawing.Size(141, 47);
+            this.history.TabIndex = 27;
+            this.history.Text = "History";
+            this.history.UseVisualStyleBackColor = true;
+            this.history.Click += new System.EventHandler(this.button1_Click);
+            // 
             // banner_pic
             // 
             this.banner_pic.Image = global::Server.Properties.Resources.Open_Web_Away_;
@@ -160,6 +171,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 500);
+            this.Controls.Add(this.history);
             this.Controls.Add(this.power_lb);
             this.Controls.Add(this.url_lb);
             this.Controls.Add(this.urlprocess);
@@ -171,6 +183,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Server";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Server";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Server_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.banner_pic)).EndInit();
@@ -192,6 +205,7 @@
         private System.Windows.Forms.Label urlprocess;
         private System.Windows.Forms.Label url_lb;
         private System.Windows.Forms.Label power_lb;
+        private System.Windows.Forms.Button history;
     }
 }
 
