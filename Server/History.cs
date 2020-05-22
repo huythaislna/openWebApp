@@ -32,12 +32,12 @@ namespace Server
 
         private void Log(string s)
         {
-            string[] arrListStr = s.Split();
+            string[] arrListStr = s.Split('+');
 
             ListViewItem x = new ListViewItem(arrListStr[0]);
             ListViewItem.ListViewSubItem y = new ListViewItem.ListViewSubItem(x, arrListStr[1]);
             ListViewItem.ListViewSubItem z = new ListViewItem.ListViewSubItem(x, arrListStr[2]);
-            ListViewItem.ListViewSubItem t = new ListViewItem.ListViewSubItem(x, DateTime.Now.ToString());
+            ListViewItem.ListViewSubItem t = new ListViewItem.ListViewSubItem(x, arrListStr[3]);
 
             x.SubItems.Add(y);
             x.SubItems.Add(z);
