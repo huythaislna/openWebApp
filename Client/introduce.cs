@@ -17,9 +17,9 @@ namespace Client
             InitializeComponent();
         }
 
-        private void banner_pic_Click(object sender, EventArgs e)
+        private void link_github_click(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            System.Diagnostics.Process.Start(link_github.Text);
         }
     }
 }
