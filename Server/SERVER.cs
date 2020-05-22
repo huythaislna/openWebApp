@@ -67,7 +67,11 @@ namespace Server
                     SendData("Processing...", clientObj);
 
                     string url = ValidateUrl(urlprocess.Text);
-                    OpenBrowser(url);
+                    try
+                    {
+                        OpenBrowser(url);
+                    } catch {
+                    }
 
                     if (IsValid(url))
                     {
