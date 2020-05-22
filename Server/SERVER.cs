@@ -118,7 +118,7 @@ namespace Server
         private void exportLog(ListViewItem i)
         {
             StreamWriter writer = File.AppendText("log.txt");
-            writer.WriteLine(i.Text + " " + i.SubItems[1].Text + " " + i.SubItems[2].Text + " " + i.SubItems[3].Text);
+            writer.WriteLine(i.Text + "+" + i.SubItems[1].Text + "+" + i.SubItems[2].Text + "+" + i.SubItems[3].Text);
             writer.Flush();
             writer.Close();
             writer.Dispose();
