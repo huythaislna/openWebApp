@@ -20,13 +20,20 @@ namespace Server
 
         private void History_Load(object sender, EventArgs e)
         {
-            string[] lines = File.ReadAllLines("log.txt");
-            
-            foreach (string s in lines)
+            try
             {
-                if (s != "")
-                    Log(s);
+                string[] lines = File.ReadAllLines("log.txt");
+                foreach (string s in lines)
+                {
+                    if (s != "")
+                        Log(s);
+                }
             }
+            catch
+            {
+            }
+            
+            
         }
         
 

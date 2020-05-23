@@ -72,7 +72,7 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "TIME";
-            this.columnHeader4.Width = 150;
+            this.columnHeader4.Width = 176;
             // 
             // History
             // 
