@@ -33,6 +33,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // log_tb
@@ -49,7 +50,7 @@
             this.log_tb.HideSelection = false;
             this.log_tb.Location = new System.Drawing.Point(12, 23);
             this.log_tb.Name = "log_tb";
-            this.log_tb.Size = new System.Drawing.Size(762, 398);
+            this.log_tb.Size = new System.Drawing.Size(762, 361);
             this.log_tb.TabIndex = 24;
             this.log_tb.UseCompatibleStateImageBehavior = false;
             this.log_tb.View = System.Windows.Forms.View.Details;
@@ -74,11 +75,23 @@
             this.columnHeader4.Text = "TIME";
             this.columnHeader4.Width = 176;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(279, 391);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(193, 47);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Clear";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(786, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.log_tb);
             this.Name = "History";
             this.ShowIcon = false;
@@ -95,5 +108,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button button1;
     }
 }
