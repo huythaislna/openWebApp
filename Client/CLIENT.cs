@@ -71,8 +71,8 @@ namespace Client
                 catch
                 {
                     notification("Server was closed!", "Red");
-                    serverStream.Close();
-                    TcpClient.Close();
+                    //serverStream.Close();
+                    //TcpClient.Close();
                     return;
                 }
             }
@@ -112,7 +112,7 @@ namespace Client
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            introduce intro = new introduce();
+            Introduce intro = new Introduce();
             intro.ShowDialog();
         }
         private bool isUrl(string url)

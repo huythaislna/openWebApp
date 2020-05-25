@@ -1,6 +1,6 @@
 ﻿namespace Client
 {
-    partial class introduce
+    partial class Introduce
     {
         /// <summary>
         /// Required designer variable.

@@ -29,11 +29,11 @@ namespace Server
         {
             try
             {
-                string[] lines = File.ReadAllLines("log.txt");
-                foreach (string s in lines)
+                string[] log_list = File.ReadAllLines("log.txt");
+                foreach (string log in log_list)
                 {
-                    if (s != "")
-                        Log(s);
+                    if (log != "")
+                        Log(log);
                 }
             }
             catch
@@ -41,25 +41,25 @@ namespace Server
               
             }
         }
-        private void Log(string s)
+        private void Log(string log)
         {
-            string[] arrListStr = s.Split('+');
+            string[] log_fields = log.Split('+');
 
-            ListViewItem x = new ListViewItem(arrListStr[0]);
-            ListViewItem.ListViewSubItem y = new ListViewItem.ListViewSubItem(x, arrListStr[1]);
-            ListViewItem.ListViewSubItem z = new ListViewItem.ListViewSubItem(x, arrListStr[2]);
-            ListViewItem.ListViewSubItem t = new ListViewItem.ListViewSubItem(x, arrListStr[3]);
+            ListViewItem new_log_row = new ListViewItem(log_fields[0]);
+            ListViewItem.ListViewSubItem status = new ListViewItem.ListViewSubItem(new_log_row, log_fields[1]);
+            ListViewItem.ListViewSubItem address = new ListViewItem.ListViewSubItem(new_log_row, log_fields[2]);
+            ListViewItem.ListViewSubItem time = new ListViewItem.ListViewSubItem(new_log_row, log_fields[3]);
 
-            x.SubItems.Add(y);
-            x.SubItems.Add(z);
-            x.SubItems.Add(t);
-            log_tb.Items.Insert(0, x);
+            new_log_row.SubItems.Add(status);
+            new_log_row.SubItems.Add(address);
+            new_log_row.SubItems.Add(time);
+            log_list.Items.Insert(0, new_log_row);
         }
         //delete history
-        private void button1_Click(object sender, EventArgs e)
+        private void clear_bt_Click(object sender, EventArgs e)
         {
             File.Delete("log.txt");
-            log_tb.Items.Clear();
+            log_list.Items.Clear();
         }
     }
 }

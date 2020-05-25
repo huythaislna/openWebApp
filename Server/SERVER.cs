@@ -70,7 +70,9 @@ namespace Server
                     try
                     {
                         OpenBrowser(url);
-                    } catch {
+                    }
+                    catch
+                    {
                     }
 
                     if (IsValid(url))
@@ -123,7 +125,7 @@ namespace Server
             writer.Close();
             writer.Dispose();
         }
-        
+
 
         //website is working correctly.
         private bool IsValid(string url)
@@ -131,13 +133,15 @@ namespace Server
             try
             {
                 ServicePointManager.ServerCertificateValidationCallback = (senderX, certificate, chain, sslPolicyErrors) => { return true; };
-                //Creating the HttpWebRequest 
+                //Creating the HttpWebRequest
                 HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
                 //Setting the Request method HEAD, you can also use GET too. 
                 request.Method = "HEAD";
+                //througt out some web site not allow http request
+                request.UserAgent = "Mozilla / 5.0(Windows NT 10.0; Win64; x64; rv: 76.0)";
                 //Getting the Web Response. 
                 HttpWebResponse response = request.GetResponse() as HttpWebResponse;
-                //Returns TRUE if the Status code == 200 
+                //Returns TRUE if the Status code == 200
                 response.Close();
                 return (response.StatusCode == HttpStatusCode.OK);
             }
@@ -166,19 +170,20 @@ namespace Server
         }
 
         //write to log textbox
-        private void Log(string data, string stt, string cli)
+        private void Log(string data, string status, string address)
         {
-            ListViewItem x = new ListViewItem(data);
-            ListViewItem.ListViewSubItem y = new ListViewItem.ListViewSubItem(x, stt);
-            ListViewItem.ListViewSubItem z = new ListViewItem.ListViewSubItem(x, cli);
-            ListViewItem.ListViewSubItem t = new ListViewItem.ListViewSubItem(x, DateTime.Now.ToString());
+            ListViewItem new_log_row = new ListViewItem(data);
+            ListViewItem.ListViewSubItem status_column = new ListViewItem.ListViewSubItem(new_log_row, status);
+            ListViewItem.ListViewSubItem address_column = new ListViewItem.ListViewSubItem(new_log_row, address);
+            ListViewItem.ListViewSubItem time_column = new ListViewItem.ListViewSubItem(new_log_row, DateTime.Now.ToString());
 
-            x.SubItems.Add(y);
-            x.SubItems.Add(z);
-            x.SubItems.Add(t);
-            log_tb.Items.Insert(0, x);
-            exportLog(x);
+            new_log_row.SubItems.Add(status_column);
+            new_log_row.SubItems.Add(address_column);
+            new_log_row.SubItems.Add(time_column);
+            log_list.Items.Insert(0, new_log_row);
+            exportLog(new_log_row);
         }
+
         //start sever
         private void start_bt_Click(object sender, EventArgs e)
         {
@@ -187,21 +192,11 @@ namespace Server
             power_lb.Text = "ON";
             power_lb.ForeColor = System.Drawing.Color.Green;
         }
-        //close sever
-        private void Server_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (Client != null)
-            {
-                clientStream.Flush();
-                clientStream.Close();
-                Client.Close();
-            }
-        }
         //view history
-        private void button1_Click(object sender, EventArgs e)
+        private void history_bt_Click(object sender, EventArgs e)
         {
             History history = new History();
-            history.ShowDialog();   
+            history.ShowDialog();
         }
     }
 }
