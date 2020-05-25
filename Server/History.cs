@@ -20,16 +20,27 @@ namespace Server
 
         private void History_Load(object sender, EventArgs e)
         {
-            string[] lines = File.ReadAllLines("log.txt");
+
+            loadLog();
             
-            foreach (string s in lines)
-            {
-                if (s != "")
-                    Log(s);
-            }
         }
         
-
+        private void loadLog()
+        {
+            try
+            {
+                string[] lines = File.ReadAllLines("log.txt");
+                foreach (string s in lines)
+                {
+                    if (s != "")
+                        Log(s);
+                }
+            }
+            catch
+            {
+              
+            }
+        }
         private void Log(string s)
         {
             string[] arrListStr = s.Split('+');
@@ -43,6 +54,12 @@ namespace Server
             x.SubItems.Add(z);
             x.SubItems.Add(t);
             log_tb.Items.Insert(0, x);
+        }
+        //delete history
+        private void button1_Click(object sender, EventArgs e)
+        {
+            File.Delete("log.txt");
+            log_tb.Items.Clear();
         }
     }
 }

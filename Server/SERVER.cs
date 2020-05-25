@@ -179,7 +179,7 @@ namespace Server
             log_tb.Items.Insert(0, x);
             exportLog(x);
         }
-
+        //start sever
         private void start_bt_Click(object sender, EventArgs e)
         {
             start_bt.Enabled = false;
@@ -187,7 +187,7 @@ namespace Server
             power_lb.Text = "ON";
             power_lb.ForeColor = System.Drawing.Color.Green;
         }
-
+        //close sever
         private void Server_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (Client != null)
@@ -197,7 +197,7 @@ namespace Server
                 Client.Close();
             }
         }
-
+        //view history
         private void button1_Click(object sender, EventArgs e)
         {
             History history = new History();
