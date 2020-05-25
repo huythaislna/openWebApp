@@ -67,7 +67,11 @@ namespace Server
                     SendData("Processing...", clientObj);
 
                     string url = ValidateUrl(urlprocess.Text);
-                    OpenBrowser(url);
+                    try
+                    {
+                        OpenBrowser(url);
+                    } catch {
+                    }
 
                     if (IsValid(url))
                     {
@@ -114,7 +118,7 @@ namespace Server
         private void exportLog(ListViewItem i)
         {
             StreamWriter writer = File.AppendText("log.txt");
-            writer.WriteLine(i.Text + " " + i.SubItems[1].Text + " " + i.SubItems[2].Text + " " + i.SubItems[3].Text);
+            writer.WriteLine(i.Text + "+" + i.SubItems[1].Text + "+" + i.SubItems[2].Text + "+" + i.SubItems[3].Text);
             writer.Flush();
             writer.Close();
             writer.Dispose();
@@ -175,7 +179,7 @@ namespace Server
             log_tb.Items.Insert(0, x);
             exportLog(x);
         }
-
+        //start sever
         private void start_bt_Click(object sender, EventArgs e)
         {
             start_bt.Enabled = false;
@@ -183,7 +187,7 @@ namespace Server
             power_lb.Text = "ON";
             power_lb.ForeColor = System.Drawing.Color.Green;
         }
-
+        //close sever
         private void Server_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (Client != null)
@@ -193,7 +197,7 @@ namespace Server
                 Client.Close();
             }
         }
-
+        //view history
         private void button1_Click(object sender, EventArgs e)
         {
             History history = new History();

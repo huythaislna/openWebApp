@@ -119,9 +119,9 @@
             this.log_tb.FullRowSelect = true;
             this.log_tb.GridLines = true;
             this.log_tb.HideSelection = false;
-            this.log_tb.Location = new System.Drawing.Point(35, 312);
+            this.log_tb.Location = new System.Drawing.Point(12, 312);
             this.log_tb.Name = "log_tb";
-            this.log_tb.Size = new System.Drawing.Size(686, 157);
+            this.log_tb.Size = new System.Drawing.Size(725, 157);
             this.log_tb.TabIndex = 23;
             this.log_tb.UseCompatibleStateImageBehavior = false;
             this.log_tb.View = System.Windows.Forms.View.Details;
@@ -144,12 +144,12 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "TIME";
-            this.columnHeader4.Width = 150;
+            this.columnHeader4.Width = 174;
             // 
             // history
             // 
             this.history.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.history.Location = new System.Drawing.Point(580, 248);
+            this.history.Location = new System.Drawing.Point(596, 248);
             this.history.Name = "history";
             this.history.Size = new System.Drawing.Size(141, 47);
             this.history.TabIndex = 27;

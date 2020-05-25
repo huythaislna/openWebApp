@@ -20,29 +20,46 @@ namespace Server
 
         private void History_Load(object sender, EventArgs e)
         {
-            string[] lines = File.ReadAllLines("log.txt");
+
+            loadLog();
             
-            foreach (string s in lines)
-            {
-                if (s != "")
-                    Log(s);
-            }
         }
         
-
+        private void loadLog()
+        {
+            try
+            {
+                string[] lines = File.ReadAllLines("log.txt");
+                foreach (string s in lines)
+                {
+                    if (s != "")
+                        Log(s);
+                }
+            }
+            catch
+            {
+              
+            }
+        }
         private void Log(string s)
         {
-            string[] arrListStr = s.Split();
+            string[] arrListStr = s.Split('+');
 
             ListViewItem x = new ListViewItem(arrListStr[0]);
             ListViewItem.ListViewSubItem y = new ListViewItem.ListViewSubItem(x, arrListStr[1]);
             ListViewItem.ListViewSubItem z = new ListViewItem.ListViewSubItem(x, arrListStr[2]);
-            ListViewItem.ListViewSubItem t = new ListViewItem.ListViewSubItem(x, DateTime.Now.ToString());
+            ListViewItem.ListViewSubItem t = new ListViewItem.ListViewSubItem(x, arrListStr[3]);
 
             x.SubItems.Add(y);
             x.SubItems.Add(z);
             x.SubItems.Add(t);
             log_tb.Items.Insert(0, x);
+        }
+        //delete history
+        private void button1_Click(object sender, EventArgs e)
+        {
+            File.Delete("log.txt");
+            log_tb.Items.Clear();
         }
     }
 }

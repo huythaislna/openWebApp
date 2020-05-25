@@ -101,13 +101,23 @@ namespace Client
         //click to send
         private void search_button_Click(object sender, EventArgs e)
         {
-            SendData(url_tb.Text.Trim());
+            if (isUrl(url_tb.Text.Trim()) == true)
+            {
+                SendData(url_tb.Text.Trim());
+            } else
+            {
+                notification("Invalid URL", "red");
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             introduce intro = new introduce();
             intro.ShowDialog();
+        }
+        private bool isUrl(string url)
+        {
+            return Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute);
         }
         
     }
