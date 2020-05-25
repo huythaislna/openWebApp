@@ -71,8 +71,8 @@ namespace Client
                 catch
                 {
                     notification("Server was closed!", "Red");
-                    //serverStream.Close();
-                    //TcpClient.Close();
+                    serverStream.Close();
+                    TcpClient.Close();
                     return;
                 }
             }
