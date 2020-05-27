@@ -89,7 +89,14 @@ namespace Client
         private void textBox4_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                SendData(url_tb.Text.Trim());
+                if (isUrl(url_tb.Text.Trim()) == true)
+                {
+                    SendData(url_tb.Text.Trim());
+                }
+                else
+                {
+                    notification("Invalid URL: " + url_tb.Text, "red");
+                }
         }
         private void connect_bt_Click(object sender, EventArgs e)
         {
@@ -104,9 +111,10 @@ namespace Client
             if (isUrl(url_tb.Text.Trim()) == true)
             {
                 SendData(url_tb.Text.Trim());
-            } else
+            }
+            else
             {
-                notification("Invalid URL", "red");
+                notification("Invalid URL: " + url_tb.Text, "red");
             }
         }
         private bool isUrl(string url)
