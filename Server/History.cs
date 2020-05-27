@@ -43,7 +43,7 @@ namespace Server
         }
         private void Log(string log)
         {
-            string[] log_fields = log.Split('+');
+            string[] log_fields = log.Split('|');
 
             ListViewItem new_log_row = new ListViewItem(log_fields[0]);
             ListViewItem.ListViewSubItem status = new ListViewItem.ListViewSubItem(new_log_row, log_fields[1]);
