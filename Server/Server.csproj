@@ -54,19 +54,19 @@
       <DependentUpon>History.cs</DependentUpon>
     </Compile>
     <Compile Include="Microsoft\Office.cs" />
-    <Compile Include="SERVER.cs">
+    <Compile Include="Server.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SERVER.Designer.cs">
-      <DependentUpon>SERVER.cs</DependentUpon>
+    <Compile Include="Server.Designer.cs">
+      <DependentUpon>Server.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="History.resx">
       <DependentUpon>History.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SERVER.resx">
-      <DependentUpon>SERVER.cs</DependentUpon>
+    <EmbeddedResource Include="Server.resx">
+      <DependentUpon>Server.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

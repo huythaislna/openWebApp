@@ -47,25 +47,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CLIENT.cs">
+    <Compile Include="Client.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CLIENT.Designer.cs">
-      <DependentUpon>CLIENT.cs</DependentUpon>
+    <Compile Include="Client.Designer.cs">
+      <DependentUpon>Client.cs</DependentUpon>
     </Compile>
-    <Compile Include="introduce.cs">
+    <Compile Include="Introduce.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="introduce.Designer.cs">
-      <DependentUpon>introduce.cs</DependentUpon>
+    <Compile Include="Introduce.Designer.cs">
+      <DependentUpon>Introduce.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CLIENT.resx">
-      <DependentUpon>CLIENT.cs</DependentUpon>
+    <EmbeddedResource Include="Client.resx">
+      <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="introduce.resx">
-      <DependentUpon>introduce.cs</DependentUpon>
+    <EmbeddedResource Include="Introduce.resx">
+      <DependentUpon>Introduce.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -109,16 +109,15 @@ namespace Client
                 notification("Invalid URL", "red");
             }
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            introduce intro = new introduce();
-            intro.ShowDialog();
-        }
         private bool isUrl(string url)
         {
             return Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute);
         }
-        
+
+        private void about_bt_Click(object sender, EventArgs e)
+        {
+            Introduce intro = new Introduce();
+            intro.ShowDialog();
+        }
     }
 }

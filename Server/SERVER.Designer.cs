@@ -35,12 +35,12 @@
             this.urlprocess = new System.Windows.Forms.Label();
             this.url_lb = new System.Windows.Forms.Label();
             this.power_lb = new System.Windows.Forms.Label();
-            this.log_tb = new System.Windows.Forms.ListView();
+            this.log_list = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.history = new System.Windows.Forms.Button();
+            this.history_bt = new System.Windows.Forms.Button();
             this.banner_pic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.banner_pic)).BeginInit();
             this.SuspendLayout();
@@ -107,24 +107,24 @@
             this.power_lb.TabIndex = 26;
             this.power_lb.Text = "OFF";
             // 
-            // log_tb
+            // log_list
             // 
-            this.log_tb.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.log_list.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.log_tb.Cursor = System.Windows.Forms.Cursors.Default;
-            this.log_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.log_tb.FullRowSelect = true;
-            this.log_tb.GridLines = true;
-            this.log_tb.HideSelection = false;
-            this.log_tb.Location = new System.Drawing.Point(12, 312);
-            this.log_tb.Name = "log_tb";
-            this.log_tb.Size = new System.Drawing.Size(725, 157);
-            this.log_tb.TabIndex = 23;
-            this.log_tb.UseCompatibleStateImageBehavior = false;
-            this.log_tb.View = System.Windows.Forms.View.Details;
+            this.log_list.Cursor = System.Windows.Forms.Cursors.Default;
+            this.log_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.log_list.FullRowSelect = true;
+            this.log_list.GridLines = true;
+            this.log_list.HideSelection = false;
+            this.log_list.Location = new System.Drawing.Point(12, 312);
+            this.log_list.Name = "log_list";
+            this.log_list.Size = new System.Drawing.Size(725, 157);
+            this.log_list.TabIndex = 23;
+            this.log_list.UseCompatibleStateImageBehavior = false;
+            this.log_list.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -146,16 +146,16 @@
             this.columnHeader4.Text = "TIME";
             this.columnHeader4.Width = 174;
             // 
-            // history
+            // history_bt
             // 
-            this.history.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.history.Location = new System.Drawing.Point(596, 248);
-            this.history.Name = "history";
-            this.history.Size = new System.Drawing.Size(141, 47);
-            this.history.TabIndex = 27;
-            this.history.Text = "History";
-            this.history.UseVisualStyleBackColor = true;
-            this.history.Click += new System.EventHandler(this.button1_Click);
+            this.history_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.history_bt.Location = new System.Drawing.Point(596, 248);
+            this.history_bt.Name = "history_bt";
+            this.history_bt.Size = new System.Drawing.Size(141, 47);
+            this.history_bt.TabIndex = 27;
+            this.history_bt.Text = "History";
+            this.history_bt.UseVisualStyleBackColor = true;
+            this.history_bt.Click += new System.EventHandler(this.history_bt_Click);
             // 
             // banner_pic
             // 
@@ -171,11 +171,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 500);
-            this.Controls.Add(this.history);
+            this.Controls.Add(this.history_bt);
             this.Controls.Add(this.power_lb);
             this.Controls.Add(this.url_lb);
             this.Controls.Add(this.urlprocess);
-            this.Controls.Add(this.log_tb);
+            this.Controls.Add(this.log_list);
             this.Controls.Add(this.port_tb);
             this.Controls.Add(this.port_lb);
             this.Controls.Add(this.start_bt);
@@ -185,7 +185,6 @@
             this.Name = "Server";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Server";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Server_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.banner_pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -197,7 +196,7 @@
         private System.Windows.Forms.Button start_bt;
         private System.Windows.Forms.TextBox port_tb;
         private System.Windows.Forms.Label port_lb;
-        private System.Windows.Forms.ListView log_tb;
+        private System.Windows.Forms.ListView log_list;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -205,7 +204,7 @@
         private System.Windows.Forms.Label urlprocess;
         private System.Windows.Forms.Label url_lb;
         private System.Windows.Forms.Label power_lb;
-        private System.Windows.Forms.Button history;
+        private System.Windows.Forms.Button history_bt;
     }
 }
 

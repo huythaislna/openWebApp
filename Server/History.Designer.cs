@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.log_tb = new System.Windows.Forms.ListView();
+            this.log_list = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
+            this.clear_bt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // log_tb
+            // log_list
             // 
-            this.log_tb.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.log_list.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.log_tb.Cursor = System.Windows.Forms.Cursors.Default;
-            this.log_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.log_tb.FullRowSelect = true;
-            this.log_tb.GridLines = true;
-            this.log_tb.HideSelection = false;
-            this.log_tb.Location = new System.Drawing.Point(12, 23);
-            this.log_tb.Name = "log_tb";
-            this.log_tb.Size = new System.Drawing.Size(762, 361);
-            this.log_tb.TabIndex = 24;
-            this.log_tb.UseCompatibleStateImageBehavior = false;
-            this.log_tb.View = System.Windows.Forms.View.Details;
+            this.log_list.Cursor = System.Windows.Forms.Cursors.Default;
+            this.log_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.log_list.FullRowSelect = true;
+            this.log_list.GridLines = true;
+            this.log_list.HideSelection = false;
+            this.log_list.Location = new System.Drawing.Point(12, 23);
+            this.log_list.Name = "log_list";
+            this.log_list.Size = new System.Drawing.Size(762, 361);
+            this.log_list.TabIndex = 24;
+            this.log_list.UseCompatibleStateImageBehavior = false;
+            this.log_list.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -75,24 +75,24 @@
             this.columnHeader4.Text = "TIME";
             this.columnHeader4.Width = 176;
             // 
-            // button1
+            // clear_bt
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(279, 391);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 47);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Clear";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.clear_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear_bt.Location = new System.Drawing.Point(279, 391);
+            this.clear_bt.Name = "clear_bt";
+            this.clear_bt.Size = new System.Drawing.Size(193, 47);
+            this.clear_bt.TabIndex = 25;
+            this.clear_bt.Text = "Clear";
+            this.clear_bt.UseVisualStyleBackColor = true;
+            this.clear_bt.Click += new System.EventHandler(this.clear_bt_Click);
             // 
             // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(786, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.log_tb);
+            this.Controls.Add(this.clear_bt);
+            this.Controls.Add(this.log_list);
             this.Name = "History";
             this.ShowIcon = false;
             this.Text = "History";
@@ -103,11 +103,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView log_tb;
+        private System.Windows.Forms.ListView log_list;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button clear_bt;
     }
 }

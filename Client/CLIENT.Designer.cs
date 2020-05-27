@@ -37,7 +37,7 @@
             this.port_tb = new System.Windows.Forms.TextBox();
             this.port_lb = new System.Windows.Forms.Label();
             this.url_lb = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.about_bt = new System.Windows.Forms.Button();
             this.search_bt = new System.Windows.Forms.Button();
             this.banner_pic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.banner_pic)).BeginInit();
@@ -130,18 +130,18 @@
             this.url_lb.TabIndex = 21;
             this.url_lb.Text = "URL";
             // 
-            // button1
+            // about_bt
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 46);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "About us";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.about_bt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.about_bt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.about_bt.Location = new System.Drawing.Point(0, 0);
+            this.about_bt.Margin = new System.Windows.Forms.Padding(4);
+            this.about_bt.Name = "about_bt";
+            this.about_bt.Size = new System.Drawing.Size(96, 46);
+            this.about_bt.TabIndex = 22;
+            this.about_bt.Text = "About us";
+            this.about_bt.UseVisualStyleBackColor = true;
+            this.about_bt.Click += new System.EventHandler(this.about_bt_Click);
             // 
             // search_bt
             // 
@@ -171,7 +171,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 492);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.about_bt);
             this.Controls.Add(this.status_lb);
             this.Controls.Add(this.url_lb);
             this.Controls.Add(this.port_tb);
@@ -205,7 +205,7 @@
         private System.Windows.Forms.TextBox port_tb;
         private System.Windows.Forms.Label port_lb;
         private System.Windows.Forms.Label url_lb;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button about_bt;
     }
 }
 
